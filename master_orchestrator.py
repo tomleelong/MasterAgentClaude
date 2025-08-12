@@ -17,9 +17,8 @@ from contextlib import asynccontextmanager
 
 try:
     from openai import AsyncOpenAI
-    from openai.types.beta.threads import Message
-    from openai.types.beta.assistants import Assistant
-    from openai.types.beta.threads.runs import Run
+    # Note: Using direct types since beta.assistants imports may not be available
+    # These will be replaced with proper types when available
 except ImportError:
     raise ImportError(
         "OpenAI SDK not found. Install with: pip install openai"
@@ -404,7 +403,7 @@ class MasterAgentOrchestrator:
     
     async def _handle_run_execution(
         self,
-        run: Run,
+        run: Any,  # OpenAI Run object
         agent: AgentInstance,
         task: Task
     ) -> str:

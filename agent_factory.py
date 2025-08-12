@@ -99,7 +99,7 @@ class AgentTemplates:
             temperature=0.2,  # Low temperature for consistent reviews
             metadata={
                 "type": "code_reviewer", 
-                "languages": languages,
+                "languages": ", ".join(languages),
                 "specialization": "code_quality"
             }
         )
@@ -153,7 +153,7 @@ class AgentTemplates:
             temperature=0.4,
             metadata={
                 "type": "system_architect", 
-                "focus_areas": areas,
+                "focus_areas": ", ".join(areas),
                 "specialization": "architecture"
             }
         )
@@ -205,7 +205,7 @@ class AgentTemplates:
             temperature=0.3,
             metadata={
                 "type": "testing_specialist", 
-                "testing_types": test_types,
+                "testing_types": ", ".join(test_types),
                 "specialization": "quality_assurance"
             }
         )
@@ -259,7 +259,7 @@ class AgentTemplates:
             temperature=0.5,  # Slightly higher for creative writing
             metadata={
                 "type": "documentation_writer", 
-                "doc_types": documentation_types,
+                "doc_types": ", ".join(documentation_types),
                 "specialization": "technical_writing"
             }
         )
@@ -310,7 +310,7 @@ class AgentTemplates:
             temperature=0.6,
             metadata={
                 "type": "project_manager", 
-                "methodologies": pm_methodologies,
+                "methodologies": ", ".join(pm_methodologies),
                 "specialization": "project_coordination"
             }
         )
